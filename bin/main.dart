@@ -6,9 +6,9 @@ import 'package:untitled4/visitor.dart';
 
 main() {
   chainOfResponsibility();
-  mediator();
-  //observer();
+  observer();
   visitor();
+  mediator();
   iterator();
 }
 
@@ -23,9 +23,17 @@ void mediator() {
 }
 
 void observer() {
-  Concert().sing().listen((event) {
-    print(event);
-  });
+
+  // Concert().sing().listen((event) {
+  //   print(event);
+  // });
+
+  var radio = Radio();
+  RadioListener marian = RadioListener('Marian');
+  RadioListener sergey = RadioListener('Sergey');
+  radio.addListener(marian);
+  radio.addListener(sergey);
+  radio.notifySubscribers('hello');
 }
 
 void visitor() {

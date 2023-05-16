@@ -1,24 +1,22 @@
-class DataSource{
-
-
-  saveToDatabase(){
-    print('saved To Databaes');
+class DataSource {
+  saveToDatabase() {
+    print('saved To Database');
   }
-  dynamic getFromDatabase(){
+
+  dynamic getFromDatabase() {
     print('got From Database');
   }
 }
 
-class Repository{
-
+class Repository {
   DataSource dataSource = DataSource();
 
-  getCurrentUser(){
+  getCurrentUser() {
     dataSource.getFromDatabase();
     print('got user from repository');
   }
 
-  saveCurrentUser(){
+  saveCurrentUser() {
     dataSource.saveToDatabase();
     print('saved user from repository');
   }
